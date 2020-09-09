@@ -1,0 +1,19 @@
+footer {
+  width: 100%;
+  background-color: gold;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer__box {
+  &__center {
+    display: flex;
+    justify-content: center;
+    line-height: 80px;
+  }
+  .icon {
+    padding: 0 10px;
+  }
+
+}
