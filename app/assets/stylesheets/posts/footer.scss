@@ -1,19 +1,32 @@
 footer {
-  width: 100%;
-  background-color: gold;
-  height: 80px;
-  position: absolute;
-  bottom: 0;
+  width            : 100%;
+  background-color : gold;
+  height           : 80px;
+  position         : absolute;
+  bottom           : 0;
 }
 
 .footer__box {
   &__center {
-    display: flex;
+    display        : flex;
     justify-content: center;
-    line-height: 80px;
+    line-height    : 80px;
   }
-  .icon {
-    padding: 0 10px;
+  
+  .lookBtn {
+    width          : 41px;
+    margin-right   : 50px;
+  }
+  .opponentNiceBtn {
+    width          : 43px;
+    margin-right   : 42px;
+  }
+  .messageBtn {
+    width          : 60px;
+    margin-right   : 35px;
+  }
+  .otherBtn {
+    width          : 55px;
   }
 
 }
