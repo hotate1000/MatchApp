@@ -1,32 +1,33 @@
 footer {
   width            : 100%;
-  background-color : gold;
-  height           : 80px;
-  position         : absolute;
+  background-color : rgb(250, 255, 255);
+  height           : 60px;
+  position         : fixed;
   bottom           : 0;
+  border           :solid 0.1px rgb(158, 158, 158);
 }
 
 .footer__box {
   &__center {
     display        : flex;
     justify-content: center;
-    line-height    : 80px;
+    line-height    : 60px;
   }
   
   .lookBtn {
-    width          : 41px;
-    margin-right   : 50px;
-  }
-  .opponentNiceBtn {
-    width          : 43px;
+    width          : 33px;
     margin-right   : 42px;
   }
+  .opponentNiceBtn {
+    width          : 35px;
+    margin-right   : 34px;
+  }
   .messageBtn {
-    width          : 60px;
-    margin-right   : 35px;
+    width          : 52px;
+    margin-right   : 27px;
   }
   .otherBtn {
-    width          : 55px;
+    width          : 47px;
   }
 
 }
