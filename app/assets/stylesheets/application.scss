@@ -1,7 +1,10 @@
 @import "reset";
+
 @import "posts/header";
 @import "posts/footer";
 @import "posts/index";
+
+@import "devise/sessions/new";
 
 
 * {
