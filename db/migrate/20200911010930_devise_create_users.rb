@@ -38,18 +38,19 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     # t.string  :password,                   null: false
     # メールアドレス、ログインパスワードはdeviseのデフォルトで、７、８行目に記述済みのためここでは記述せず
       t.string  :nickname,                     null: false  #ニックネーム
-      t.string  :family_name,                  null: false  #
-      t.string  :family_name_kana,             null: false
-      t.string  :user_name,                    null: false
-      t.string  :user_name_kana,               null: false
-      t.date    :birthday,                     null: false
-      t.text    :image
-      t.string  :postal_code
-      t.integer :prefectures
-      t.string  :municipality
-      t.string  :address
-      t.string  :apartment_room_namber
-      t.string  :phone_number
+      t.string  :family_name,                  null: false  #苗字
+      t.string  :family_name_kana,             null: false  #苗字カナ
+      t.string  :user_name,                    null: false  #名前
+      t.string  :user_name_kana,               null: false  #名前カナ
+      t.date    :birthday,                     null: false  #生年月日
+      # t.integer :sex,                          null: false  #性別
+      t.text    :image                                      #写真
+      t.string  :postal_code                                #郵便番号
+      t.integer :prefectures                                #都道府県
+      t.string  :municipality                               #市区町村
+      t.string  :address                                    #番地
+      t.string  :apartment_room_namber                      #マンション、ビル、部屋番
+      t.string  :phone_number                               #電話番号
 
       t.timestamps null: false
     end
