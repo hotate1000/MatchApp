@@ -18,6 +18,19 @@ ActiveRecord::Schema.define(version: 2020_09_11_010930) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "nickname", null: false
+    t.string "family_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "user_name", null: false
+    t.string "user_name_kana", null: false
+    t.date "birthday", null: false
+    t.text "image"
+    t.string "postal_code"
+    t.integer "prefectures"
+    t.string "municipality"
+    t.string "address"
+    t.string "apartment_room_namber"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

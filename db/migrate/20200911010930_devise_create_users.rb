@@ -33,6 +33,24 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
 
+    # 追加したカラム
+    # t.string  :email,                      null: false, unique: true
+    # t.string  :password,                   null: false
+    # メールアドレス、ログインパスワードはdeviseのデフォルトで、７、８行目に記述済みのためここでは記述せず
+      t.string  :nickname,                     null: false  #ニックネーム
+      t.string  :family_name,                  null: false  #
+      t.string  :family_name_kana,             null: false
+      t.string  :user_name,                    null: false
+      t.string  :user_name_kana,               null: false
+      t.date    :birthday,                     null: false
+      t.text    :image
+      t.string  :postal_code
+      t.integer :prefectures
+      t.string  :municipality
+      t.string  :address
+      t.string  :apartment_room_namber
+      t.string  :phone_number
+
       t.timestamps null: false
     end
 
