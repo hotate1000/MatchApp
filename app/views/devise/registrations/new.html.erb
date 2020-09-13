@@ -20,213 +20,211 @@
 
 
     <div class='devise__registrations__userBox__textBox'>
-    <div class='devise__registrations__userBox__textBox__title'>
+      <div class='devise__registrations__userBox__textBox__title'>
 
-      <%# <%= form_with model:@user, scope:'recource_name', url:user_registration_path, class:'new_user', id:'new_user', local: true do |f| %> 
-      <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
+      <%# <%= form_with model: @user, scope:'recource_name', url:user_registration_path, class:'new_user', id:'new_user', local: true do |f| %> 
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-        <%# ニックネーム %>
-        <div class='nickname  top'>
-          <div class='nickname__label  label'>
-            <%= f.label :nickname, 'ニックネーム' %>
-            <div class='nickname__label__required  required'>
-              必須
+          <%# ニックネーム %>
+          <div class='nickname  top'>
+            <div class='nickname__label  label'>
+              <%= f.label :nickname, 'ニックネーム' %>
+              <div class='nickname__label__required  required'>
+                必須
+              </div>
+            </div>
+            <%= f.text_field :nickname, autofocus: true, placeholder: '例）たろー', class: 'nickname__form  form', required: true %>
+          </div>
+          
+          <%# メールアドレス %>
+          <div class='field  email  top'>
+            <div class='email__label  label'>
+              <%= f.label :email, 'メールアドレス' %>
+              <div class='email__label__required  required'>
+                必須
+              </div>
+            </div>
+            <%= f.email_field :email, autocomplete: "email", placeholder: 'メールアドレス', class: 'email__form  form', required: true %>
+          </div>
+
+          <%# パスワード %>
+          <div class="field  password  top">
+            <div class='password__label  label'>
+              <%= f.label :password, 'パスワード' %>
+              <% if @minimum_password_length %>
+              (<%= @minimum_password_length %> 文字以上)
+              <% end %>
+              <div class='password__label__required  required'>
+                必須
+              </div>
+            </div>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード', class: 'password__form  form', required: true %>
+          </div>
+
+          <%# パスワード確認用 %>
+          <div class='field  confirmationPassword  top'>
+            <div class='confirmationPassword__label  label'>
+              <%= f.label :password_confirmation, 'パスワード(確認用)' %>
+              <div class='comfirmationPassword__label__required  required'>
+                必須
+              </div>
+            </div>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード(確認用)', class: 'confirmationPassword__form  form', required: true %>
+          </div>
+
+          <%# 性別 %>
+          <div class='sex  top'>
+            <div class='sex__label  label'>
+              <%= f.label :sex, '性別' %>
+              <div class='sex__label__required  required'>
+                必須
+              </div>
+            </div>
+            <label><%= f.radio_button :sex, 0, class:'sex__form' %> 男 </label>
+            <label><%= f.radio_button :sex, 1, class:'sex__form' %> 女 </label>
+          </div>
+
+
+          <%# プロフィール画像 %>
+          <div class='image'>
+            <div class='image__label  label'>
+              <%= f.label :image, 'プロフィール画像' %>
+            </div>
+          <%= f.file_field :image, class: 'image__form' %>
+          </div>
+
+
+
+      <%# 本人確認ラベル %>
+          <div class='identification'>
+            本人確認
+          </div>
+          <div class='identification__memo'>
+            安心・安全にご利用頂くために、お客様の本人情報の登録にご協力ください。(注)一部公開される項目があります。
+          </div>
+
+          <%# 苗字、名前（漢字） %>
+          <div class='nameKanji  top'>
+            <div class='nameKanji__label  label'>
+              <%= f.label 'お名前' %>
+              <div class='nameKanji__label__required  required'>
+                必須
+              </div>
+            </div>
+            <div class='nameKanji__formBox  formBox'>
+              <%= f.text_field :family_name, placeholder:'山田', class:'nameKanji__formBox__upForm  upForm', required: true %>
+              <%= f.text_field :user_name, placeholder:'太郎', class:'nameKanji__formBox__downForm  downForm', required: true %>
             </div>
           </div>
-          <%= f.text_field :nickname, autofocus: true, placeholder: '例）たろー', class: 'nickname__form  form', required: true %>
-        </div>
-        
-        <%# メールアドレス %>
-        <div class='field  email  top'>
-          <div class='email__label  label'>
-            <%= f.label :email, 'メールアドレス' %>
-            <div class='email__label__required  required'>
-              必須
+
+          <%# 苗字、名前（カナ） %>
+          <div class='nameKana  top'>
+            <div class='nameKana__label  label'>
+              <%= f.label :name_kana, 'オナマエ' %>
+              <div class='nameKana__label__required  required'>
+                必須
+              </div>
+            </div>
+            <div class='nameKana__formBox  formBox'>
+              <%= f.text_field :family_name_kana, placeholder:'ヤマダ', class:'nameKana__formBox__upForm  upForm', required: true %>
+              <%= f.text_field :user_name_kana, placeholder:'タロウ', class:'nameKana__formBox__downForm  downForm', required: true %>
             </div>
           </div>
-          <%= f.email_field :email, autocomplete: "email", placeholder: 'メールアドレス', class: 'email__form  form', required: true %>
-        </div>
 
-        <%# パスワード %>
-        <div class="field  password  top">
-          <div class='password__label  label'>
-            <%= f.label :password, 'パスワード' %>
-            <% if @minimum_password_length %>
-            (<%= @minimum_password_length %> 文字以上)
-            <% end %>
-            <div class='password__label__required  required'>
-              必須
+          <%# 誕生日 %>
+          <div class='birthday  top'>
+            <div class='birthday__label  label'>
+              <%= f.label :birthday, '生年月日' %>
+              <div class='birthday__label__required  required'>
+                必須
+              </div>
+            </div>  
+            <div class='birthday__formBox'>
+            <%# != sprintf(f.date_select(:birthday, with_css_classes:'XXXXX', prompt:"---", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日' %>
+              <%= raw sprintf(f.date_select(
+                :birthday,
+                class:"main__b",
+                                use_month_numbers:  true,                  #jan, febではなく数字で月を表現
+                                start_year:         1930,                  #何年から
+                                end_year:           (Time.now.year),       #何年まで
+                                # default:            Date.new(1989,1,1),  #初めに表示される日程
+                                prompt:             "----",                #初期に表示される文字
+                                date_separator:     '%s'),'年','月')+'日'   #年月日の表示
+              %>
             </div>
           </div>
-          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード', class: 'password__form  form', required: true %>
-        </div>
 
-        <%# パスワード確認用 %>
-        <div class='field  confirmationPassword  top'>
-          <div class='confirmationPassword__label  label'>
-            <%= f.label :password_confirmation, 'パスワード(確認用)' %>
-            <div class='comfirmationPassword__label__required  required'>
-              必須
+          <%# 郵便番号 %>
+          <div class='postalCode  top'>
+            <div class='postalCode__label  label'>
+              <%= f.label :postal_code, '郵便番号'%>
             </div>
+            <%= f.text_field :postal_code, placeholder: '7桁半角整数(ハイフン(-)なし)', class: 'postalCode__form  form' %>
           </div>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'パスワード(確認用)', class: 'confirmationPassword__form  form', required: true %>
-        </div>
 
-        <%# 性別 %>
-        <div class='sex  top'>
-          <div class='sex__label  label'>
-            <%= f.label :sex, '性別' %>
-            <div class='sex__label__required  required'>
-              必須❌
+          <%# 都道府県 %>
+          <div class='prefectures  top'>
+            <div class='prefectures__label  label'>
+              <%= f.label :prefectures, '都道府県'%>
+              <div class='prefectures__label__required  required'>
+                必須
+              </div>
             </div>
+            <%# <%= f.collection_select :prefectures, Prefecture.all,:id, :name, prompt: "選択してください", class: "prefectures__form", required: true%> %>
           </div>
-          <label><%= f.radio_button :sex, 0, class:'sex__form' %> 男 </label>
-          <label><%= f.radio_button :sex, 1, class:'sex__form' %> 女 </label>
-        </div>
 
-        <%# プロフィール画像 %>
-        <div class='image'>
-          <div class='image__label  label'>
-            <%= f.label :image, 'プロフィール画像' %>
-          </div>
-        <%= f.file_field :image, class: 'image__form' %>
-        </div>
-
-
-
-    <%# 本人確認ラベル %>
-        <div class='identification'>
-          本人確認
-        </div>
-        <div class='identification__memo'>
-          安心・安全にご利用頂くために、お客様の本人情報の登録にご協力ください。(注)一部公開される項目があります。
-        </div>
-
-        <%# 苗字、名前（漢字） %>
-        <div class='nameKanji  top'>
-          <div class='nameKanji__label  label'>
-            <%= f.label 'お名前' %>
-            <div class='nameKanji__label__required  required'>
-              必須
+          <%# 市区町村 %>
+          <div class='municipality  top'>
+            <div class='municipality__label  label'>
+              <%= f.label :municipality, '市区町村'%>
+              <div class='municipality__label__required  required'>
+                必須
+              </div>
             </div>
+            <%= f.text_field :municipality, placeholder: '例) 大阪市中央区', class: 'municipality__form  form', required: true %>
           </div>
-          <div class='nameKanji__formBox  formBox'>
-            <%= f.text_field :family_name, placeholder:'山田', class:'nameKanji__formBox__upForm  upForm', required: true %>
-            <%= f.text_field :user_name, placeholder:'太郎', class:'nameKanji__formBox__downForm  downForm', required: true %>
-          </div>
-        </div>
 
-        <%# 苗字、名前（カナ） %>
-        <div class='nameKana  top'>
-          <div class='nameKana__label  label'>
-            <%= f.label :name_kana, 'オナマエ' %>
-            <div class='nameKana__label__required  required'>
-              必須
+          <%# 番地 %>
+          <div class='address  top'>
+            <div class='address__label  label'>
+              <%= f.label :address, '番地'%>
+              <div class='address__label__required  required'>
+                必須
+              </div>
             </div>
+            <%= f.text_field :address, placeholder: '例) 難波 1-2-3', class: 'address__form  form', required: true %>
           </div>
-          <div class='nameKana__formBox  formBox'>
-            <%= f.text_field :family_name_kana, placeholder:'ヤマダ', class:'nameKana__formBox__upForm  upForm', required: true %>
-            <%= f.text_field :user_name_kana, placeholder:'タロウ', class:'nameKana__formBox__downForm  downForm', required: true %>
-          </div>
-        </div>
 
-        <%# 誕生日 %>
-        <div class='birthday  top'>
-          <div class='birthday__label  label'>
-            <%= f.label :birthday, '生年月日' %>
-            <div class='birthday__label__required  required'>
-              必須
+          <%# マンション、ビル、部屋番号 %>
+          <div class='apartmentRoomNamber  top'>
+            <div class='apartmentRoomNamber__label  label'>
+              <%= f.label :apartment_room_namber, '建物名、部屋番号'%>
             </div>
-          </div>  
-          <div class='birthday__formBox'>
-          <%# != sprintf(f.date_select(:birthday, with_css_classes:'XXXXX', prompt:"---", use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日' %>
-            <%= raw sprintf(f.date_select(
-              :birthday,
-              class:"main__b",
-                              use_month_numbers:  true,                  #jan, febではなく数字で月を表現
-                              start_year:         1930,                  #何年から
-                              end_year:           (Time.now.year),       #何年まで
-                              # default:            Date.new(1989,1,1),  #初めに表示される日程
-                              prompt:             "----",                #初期に表示される文字
-                              date_separator:     '%s'),'年','月')+'日'   #年月日の表示
-            %>
+            <%= f.text_field :apartment_room_namber, placeholder: '例) マンションフリマ 201号室', class: 'apartmentRoomNamber__form  form' %>
           </div>
-        </div>
 
-        <%# 郵便番号 %>
-        <div class='postalCode  top'>
-          <div class='postalCode__label  label'>
-            <%= f.label :postal_code, '郵便番号'%>
-          </div>
-          <%= f.text_field :postal_code, placeholder: '7桁半角整数(ハイフン(-)なし)', class: 'postalCode__form  form' %>
-        </div>
-
-        <%# 都道府県 %>
-        <div class='prefectures  top'>
-          <div class='prefectures__label  label'>
-            <%= f.label :prefectures, '都道府県'%>
-            <div class='prefectures__label__required  required'>
-              必須
+          <%# 電話番号 %>
+          <div class='phoneNumber  top'>
+            <div class='phoneNumber__label  label'>
+              <%= f.label :phone_number,'電話番号'%>
+              <div class='phoneNumber__label__required  required'>
+                必須
+              </div>
             </div>
+            <%= f.text_field :phone_number, placeholder: '例) 08012345678(ハイフン(-)なし)', class: 'phoneNumber__form  form', required: true %>
           </div>
-          <%# <%= f.collection_select :prefectures, Prefecture.all,:id, :name, prompt: "選択してください", class: "prefectures__form", required: true%> %>
-        </div>
+      
 
-      <%# 市区町村 %>
-      <div class='municipality  top'>
-        <div class='municipality__label  label'>
-          <%= f.label :municipality, '市区町村'%>
-          <div class='municipality__label__required  required'>
-            必須
+
+
+          <div class="actions">
+            <%= f.submit "新規登録", class:'new__actions__sinUp' %>
           </div>
-        </div>
-        <%= f.text_field :municipality, placeholder: '例) 大阪市中央区', class: 'municipality__form  form', required: true %>
-      </div>
-
-      <%# 番地 %>
-      <div class='address  top'>
-        <div class='address__label  label'>
-          <%= f.label :address, '番地'%>
-          <div class='address__label__required  required'>
-            必須
-          </div>
-        </div>
-        <%= f.text_field :address, placeholder: '例) 難波 1-2-3', class: 'address__form  form', required: true %>
-      </div>
-
-      <%# マンション、ビル、部屋番号 %>
-      <div class='apartmentRoomNamber  top'>
-        <div class='apartmentRoomNamber__label  label'>
-          <%= f.label :apartment_room_namber, '建物名、部屋番号'%>
-        </div>
-        <%= f.text_field :apartment_room_namber, placeholder: '例) マンションフリマ 201号室', class: 'apartmentRoomNamber__form  form' %>
-      </div>
-
-      <%# 電話番号 %>
-      <div class='phoneNumber  top'>
-        <div class='phoneNumber__label  label'>
-          <%= f.label :phone_number,'電話番号'%>
-          <div class='phoneNumber__label__required  required'>
-            必須
-          </div>
-        </div>
-        <%= f.text_field :phone_number, placeholder: '例) 08012345678(ハイフン(-)なし)', class: 'phoneNumber__form  form', required: true %>
-      </div>
-   
-
-
-
-        <div class="actions">
-          <%= f.submit "新規登録", class:'new__actions__sinUp' %>
-        </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
     </div>
-
-
   </div>
 </div>
