@@ -1,9 +1,17 @@
 @import "reset";
+@import "variable";
+
 @import "posts/header";
 @import "posts/footer";
 @import "posts/index";
 
+@import "devise/registrations/new";
+@import "devise/sessions/new";
+
 
 * {
   box-sizing: border-box;
+}
+body {
+  background-color: rgb(237, 250, 255);
 }
