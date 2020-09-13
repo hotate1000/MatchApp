@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2020_09_11_010930) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "nickname", null: false
-    t.string "family_name", null: false
-    t.string "family_name_kana", null: false
-    t.string "user_name", null: false
-    t.string "user_name_kana", null: false
-    t.date "birthday", null: false
+    t.string "nickname"
+    t.string "family_name"
+    t.string "family_name_kana"
+    t.string "user_name"
+    t.string "user_name_kana"
+    t.date "birthday"
     t.text "image"
     t.string "postal_code"
     t.integer "prefectures"
