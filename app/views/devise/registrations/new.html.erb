@@ -30,7 +30,7 @@
 
         <div class='nickname  top'>
           <div class='nickname__label  label'>
-            <%= f.label 'ニックネーム' %>
+            <%= f.label :nickname, 'ニックネーム' %>
             <div class='nickname__label__required  required'>
               必須
             </div>
@@ -75,10 +75,28 @@
         </div>
 
 
-        <div>性別</div>
-        <div>画像</div>
+        <div class='sex  top'>
+          <div class='sex__label  label'>
+            <%= f.label :sex, '性別' %>
+            <div class='sex__label__required  required'>
+              必須
+            </div>
+          </div>
+          <label><%= f.radio_button :sex, 0, class:'sex__form' %> 男 </label>
+          <label><%= f.radio_button :sex, 1, class:'sex__form' %> 女 </label>
+        </div>
 
 
+        <div class='image'>
+          <div class='image__label  label'>
+            <%= f.label :image, 'プロフィール画像' %>
+          </div>
+        <%= f.file_field :image, class: 'image__form' %>
+        </div>
+
+
+
+<%# 本人確認ラベル %>
         <div class='identification'>
           本人確認
         </div>
@@ -89,7 +107,7 @@
 
         <div class='nameKanji  top'>
           <div class='nameKanji__label  label'>
-            <%= f.label 'お名前' %>
+            <%= f.label :name_kanji, 'お名前' %>
             <div class='nameKanji__label__required  required'>
               必須
             </div>
@@ -103,7 +121,7 @@
 
         <div class='nameKana  top'>
           <div class='nameKana__label  label'>
-            <%= f.label 'オナマエ' %>
+            <%= f.label :name_kana, 'オナマエ' %>
             <div class='nameKana__label__required  required'>
               必須
             </div>
@@ -117,7 +135,7 @@
 
         <div class='birthday  top'>
           <div class='birthday__label  label'>
-            <%= f.label '生年月日' %>
+            <%= f.label :birthday, '生年月日' %>
             <div class='birthday__label__required  required'>
               必須
             </div>
@@ -140,7 +158,7 @@
 
         <div class='postalCode  top'>
           <div class='postalCode__label  label'>
-            <%= f.label '郵便番号'%>
+            <%= f.label :postal_code, '郵便番号'%>
           </div>
           <%= f.text_field :postal_code, placeholder: '7桁半角整数(ハイフン(-)なし)', class: 'postalCode__form  form' %>
         </div>
@@ -148,7 +166,7 @@
 
         <div class='prefectures  top'>
           <div class='prefectures__label  label'>
-            <%= f.label '都道府県'%>
+            <%= f.label :prefectures, '都道府県'%>
             <div class='prefectures__label__required  required'>
               必須
             </div>
@@ -159,7 +177,7 @@
 
       <div class='municipality  top'>
         <div class='municipality__label  label'>
-          <%= f.label '市区町村'%>
+          <%= f.label :municipality, '市区町村'%>
           <div class='municipality__label__required  required'>
             必須
           </div>
@@ -170,7 +188,7 @@
 
       <div class='address  top'>
         <div class='address__label  label'>
-          <%= f.label '番地'%>
+          <%= f.label :address, '番地'%>
           <div class='address__label__required  required'>
             必須
           </div>
@@ -181,7 +199,7 @@
 
       <div class='apartmentRoomNamber  top'>
         <div class='apartmentRoomNamber__label  label'>
-          <%= f.label '建物名、部屋番号'%>
+          <%= f.label :apartment_room_namber, '建物名、部屋番号'%>
         </div>
         <%= f.text_field :apartment_room_namber, placeholder: '例) マンションフリマ 201号室', class: 'apartmentRoomNamber__form  form' %>
       </div>
@@ -189,11 +207,10 @@
 
       <div class='phoneNumber  top'>
         <div class='phoneNumber__label  label'>
-          <%= f.label '電話番号'%>
+          <%= f.label :phone_number,'電話番号'%>
           <div class='phoneNumber__label__required  required'>
             必須
           </div>
-
         </div>
         <%= f.text_field :phone_number, placeholder: '例) 08012345678(ハイフン(-)なし)', class: 'phoneNumber__form  form', required: true %>
       </div>

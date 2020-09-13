@@ -9,96 +9,101 @@
 }
 
 
+// フォームボックス
 .devise__registrations__userBox {
-  width              : 700px;
-  background-color   : white;
-  margin             : 0 auto;
+  width             : 700px;
+  background-color  : white;
+  margin            : 0 auto;
   &__header {
-    margin           : 45px 0 0 0;
-    border-bottom           : solid 6px rgb(237, 250, 255);
-    padding          : 20px;
-    font-size        : 25px;
-    text-align       : center;
-
+    margin          : 45px 0 0 0;
+    border-bottom   : solid 6px rgb(237, 250, 255);
+    padding         : 20px;
+    font-size       : 25px;
+    text-align      : center;
   }
   &__textBox {
-    margin           : 0 auto;
-    padding          : 30px 0;
+    margin          : 0 auto;
+    padding         : 30px 0;
     width: 450px;
   }
 }
 
-.nickaname {
-  padding: 200px 0 0 0;
-}
 
+
+.nickaname {
+  padding           : 200px 0 0 0;
+}
 .top {
-  margin: 0px 0 20px 0;
+  margin            : 0px 0 20px 0;
 }
 .new_user {
-  font-size: 15px;
+  font-size         : 15px;
 }
 .label {
-  display: flex;
+  display           : flex;
 }
 .required {
-  margin-left: 8px;
-  background-color: red;
-  color : white;
-  font-size: 12px;
-  padding : 2px 5px;
-  border-radius: 3px;
+  margin-left       : 8px;
+  background-color  : red;
+  color             : white;
+  font-size         : 12px;
+  padding           : 2px 5px;
+  border-radius     : 3px;
 }
 .form {
-  width: 100%;
-  padding : 0 15px;
+  width             : 100%;
+  padding           : 0 15px;
 }
 .formBox {
-  display: flex;
+  display           : flex;
 }
 .upForm {
-  width:100%;
-  padding : 0 15px;
+  width             : 100%;
+  padding           : 0 15px;
 }
 .downForm {
-  width:100%;
-  padding : 0 15px;
-  margin-left: 5%;
+  width             : 100%;
+  padding           : 0 15px;
+  margin-left       : 5%;
 }
 .birthday__formBox  select{
-  width: 22%;
-  height: 32px;
-  vertical-align : middle;
-  padding-left: 15px;
+  width             : 22%;
+  height            : 32px;
+  vertical-align    : middle;
+  padding-left      : 15px;
 }
 
 
-
+// プロフィール画像部分
+.image__form {
+  margin            : 10px 0 60px 0;
+}
 
 
 // 本人確認の文字
 .identification {
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  margin-top:10px;
+  font-size         : 16px;
+  font-weight       : 600;
+  text-align        : center;
+  margin-top        : 10px;
   &__memo {
-    font-size: 14px;
-    letter-spacing: 0.01em;
-    margin-bottom: 10px;
+    font-size       : 14px;
+    letter-spacing  : 0.01em;
+    margin-bottom   : 10px;
   }
 }
 
+// 新規登録ボタン
 .new__actions__sinUp {
-  margin           : 20px 0;
-  color            : rgb(50, 50, 50);
-  font-size        : 14px;
-  border           : solid 2px rgb(50, 50, 50);
-  background-color: red;
-  letter-spacing: 4px;
-  height:50px;
-  width: 100%;
-  color:white;
+  margin            : 20px 0;
+  color             : rgb(50, 50, 50);
+  font-size         : 14px;
+  border            : solid 2px rgb(50, 50, 50);
+  background-color  : red;
+  letter-spacing    : 4px;
+  height            : 50px;
+  width             : 100%;
+  color             : white;
 }
 
 // ログインボタン
