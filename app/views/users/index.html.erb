@@ -1,0 +1,21 @@
+<%= render partial: "header" %>
+
+<div class='usersIndex'>
+  <% @users.each do |user| %>
+    <div class='usersIndex__userbox'>
+      <div class='usersIndex__userbox__img'>
+        <%= link_to image_tag("/assets/test.jpg", class:'userImg'), root_path %>
+        <%# <%= link_to image_tag("#{user.image}", class:'userImg'), root_path %> %>
+      </div>
+ 
+      <div class='usersIndex__userbox__name'>
+        <%=user.nickname%>
+        <%=user.image%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%= render partial: "footer" %>
