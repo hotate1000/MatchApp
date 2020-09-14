@@ -11,7 +11,7 @@
         <%= link_to image_tag("/assets/talk.png"),   root_path, class:'meIcon' %>
       </div>
       <div class='footer__box__center__otherBtn otherBtn icon'>
-        <%= link_to image_tag("/assets/other.png"),  root_path, class:'otIcon' %>
+        <%= link_to image_tag("/assets/other.png"),  user_path(current_user[:id]), class:'otIcon' %>
       </div>
     </div>
   </div>
