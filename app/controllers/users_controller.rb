@@ -3,7 +3,17 @@ class UsersController < ApplicationController
 
 
   def index
-    @users_index = User.all
+    # @user_index = User.where(nickname: "犬３")
+    # @users_index = User.all
+    if (current_user[:sex] == 1)
+      @users_index = User.where(sex: 0)
+      # @users_index = User.all
+    elsif (current_user[:sex] == 0)
+      @users_index = User.where(sex: 1)
+      # @users_index = User.all
+    else
+      @users_index = User.all
+    end
   end
 
   def show
