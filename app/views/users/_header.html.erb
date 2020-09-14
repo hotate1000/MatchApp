@@ -2,16 +2,17 @@
   <div class='header__box'>
     <div class='header__box__left'>
       <div class='header__box__left__title'>
-        <img src="assets/logo1.png" alt="ロゴの画像" class='logo_img' >
+        <img src="/assets/logo1.png" alt="ロゴの画像" class='logo_img' >
       </div>
       <div class='header__box__left__img'>
       </div>
     </div>
+    
     <div class='header__box__right'>
       <div class='header__box__right__myPage'>
-        <span><img src="assets/arrow.png" alt="矢印の画像" class='arrow'></span>
+        <span><img src="/assets/arrow.png" alt="矢印の画像" class='arrow'></span>
         <ul class="header__box__right__myPage__list">
-          <li><%= link_to 'マイページ', new_user_registration_path, method: :get %></li>
+          <li><%= link_to 'マイページ', user_path(current_user[:id]), method: :get %></li>
           <li><%= link_to 'ログアウト',destroy_user_session_path, method: :delete %></li>
           <li><%= link_to '相手からのいいね', new_user_session_path%></li>
           <li><%= link_to 'お気に入り'%></li>

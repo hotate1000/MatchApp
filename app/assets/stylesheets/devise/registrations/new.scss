@@ -1,5 +1,5 @@
 .devise__registrations__header {
-  @include loginSinupHeader ();
+  @include loginSinupHeader();
   &__left {
     @include loginSinupHeader__logo();
   }
