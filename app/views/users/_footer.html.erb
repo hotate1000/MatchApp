@@ -2,13 +2,13 @@
   <div class='footer__box'>
     <div class='footer__box__center'>
       <div class='footer__box__center__lookBtn lookBtn icon'>
-        <%= link_to image_tag("/assets/search.png"), root_path, class:'loIcon' %>
+        <%= link_to image_tag("/assets/search.png"), users_path, class:'loIcon' %>
       </div>
       <div class='footer__box__center__opponentNiceBtn opponentNiceBtn icon'>
-        <%= link_to image_tag("/assets/good.png"),   root_path, class:'opIcon' %>
+        <%= link_to image_tag("/assets/good.png"),   users_path, class:'opIcon' %>
       </div>
       <div class='footer__box__center__messageBtn messageBtn icon'>
-        <%= link_to image_tag("/assets/talk.png"),   root_path, class:'meIcon' %>
+        <%= link_to image_tag("/assets/talk.png"),   users_path, class:'meIcon' %>
       </div>
       <div class='footer__box__center__otherBtn otherBtn icon'>
         <%= link_to image_tag("/assets/other.png"),  user_path(current_user[:id]), class:'otIcon' %>
