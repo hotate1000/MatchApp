@@ -4,10 +4,11 @@
 <div class='users__show__imageBox'>
   <%= image_tag(@users_show.image.url, class:'users__show__imageBox__image') %>
   <div class='users__show__imageBox__nickname'>
-    <%= @users_show.nickname %>
+    <%# <%= @users_show.nickname %> 
   </div>
   <div class='users__show__goodbtn'>
-    いいね
+    <%# いいね %>
+    <%= render partial: "follow_form" %>
   </div>
 </div>
 
@@ -34,3 +35,7 @@
 
 <%= render partial: "footer" %>
 
+
+
+<%# フォローしている、されているユーザーを表示 %>
+<%= render partial: "stats" %>

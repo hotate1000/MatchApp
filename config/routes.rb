@@ -14,4 +14,13 @@ Rails.application.routes.draw do
   root to: 'users#index';
   resources :posts, only: [:index];
   resources :users, only: [:index, :show]
+
+
+  # いいね機能用のルーティング
+  resources :users do
+    member do
+     get :following, :followers
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
 end
