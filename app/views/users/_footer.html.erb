@@ -5,7 +5,7 @@
         <%= link_to image_tag("/assets/search.png"), users_path, class:'loIcon' %>
       </div>
       <div class='footer__box__center__opponentNiceBtn opponentNiceBtn icon'>
-        <%= link_to image_tag("/assets/good.png"),   users_path, class:'opIcon' %>
+        <%= link_to image_tag("/assets/good.png"), followedPage_user_path(current_user[:id]), class:'opIcon' %>
       </div>
       <div class='footer__box__center__messageBtn messageBtn icon'>
         <%= link_to image_tag("/assets/talk.png"),   users_path, class:'meIcon' %>

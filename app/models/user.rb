@@ -18,7 +18,7 @@ class User < ApplicationRecord
 # has_many :followers, through: :follower_relationships
 
 
-  # followerフォローされる人、followingフォローする人
+  # followerフォローされる人、followedフォローする人
   has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy # フォロー取得
   has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy # フォロワー取得
   has_many :following_user, through: :follower, source: :followed # 自分がフォローしている人

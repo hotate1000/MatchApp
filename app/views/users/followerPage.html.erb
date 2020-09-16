@@ -1,20 +1,28 @@
+<%# いいねしたユーザー達 %>
 <%= render partial: "header" %>
 
 <div class='topTitle'>
-  ユーザー一覧画面
+  いいねしたユーザー一覧
 </div>
+
 <div class='usersIndex'>
-  <% @users_index.each do |user| %>
-    <div class='usersIndex__userbox'>
+  <% @users_followerPage.following_user.where.not(id: current_user.id).each do |user| %>
+     <div class='usersIndex__userbox'>
       <div class='usersIndex__userbox__img'>
         <%=link_to image_tag(user.image.url, class:'userImg'),user_path(user[:id]) %>
       </div>
- 
       <div class='usersIndex__userbox__name'>
         <%=user.nickname%>
       </div>
     </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
 
 <%= render partial: "footer" %>
