@@ -18,9 +18,17 @@ class UsersController < ApplicationController
   def show
     @users_show = User.find(params[:id])
   end
+  
+  def followerPage
+    @users_followerPage = User.find(params[:id])
+  end
+
+  def followedPage
+    # @users_followerpage = User.all.where.not(id: current_user.id)
+    @users_followedPage = User.find(params[:id])
+  end
 end
-
-
+  
 
 private
 def login_in_user

@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   # end
   root to: 'users#index';
   resources :posts, only: [:index];
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    # collection do
+    member do
+      get 'followerPage'
+      get 'followedPage'
+    end
+  end
 
 
   # いいね機能用のルーティング
