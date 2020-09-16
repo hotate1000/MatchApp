@@ -1,0 +1,15 @@
+<% if user_signed_in? && (current_user.id != @users_show.id) %>
+  <% if current_user.following?(@users_show) %>
+    <div class='follow-btnBox'>
+      <%= link_to 'フォロー外す', unfollow_path(@users_show[:id]), method: :POST, class:'follow-btnBox__btn' %>
+    </div>
+  <% else %>
+    <div class='follow-btnBox folloringBtnBox'>
+      <%= link_to 'フォローする', follow_path(@users_show[:id]), method: :POST, class:'follow-btnBox__btn folloringBtn' %>
+    </div>
+  <% end %>
+<% else %>
+  <div class='follow-btnBoxEmpty'>
+  </div>
+<% end %>
+
