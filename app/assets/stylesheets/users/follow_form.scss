@@ -1,11 +1,24 @@
-.follow-btn {
+.follow-btnBox {
+  display: inline-block;
   height: 40px;
-  width: 90px;
+  width: 120px;
   margin: 20px 0 25px 0;
   border-radius: 8px;
+  background-color: gainsboro;
+  border: solid 1px black;
+  text-align: center;
+  line-height: 40px;
+  &__btn {
+    color: black;
+    text-decoration: none;
+  }
+  .folloringBtn {
+    color: white;
+  }
 }
-
-.btn-primary {
+.folloringBtnBox {
   background-color: rgb(0, 179, 255);
-  color: white;
+}
+.follow-btnBoxEmpty {
+  height: 80px;
 }

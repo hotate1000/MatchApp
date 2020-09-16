@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
 
   def index
-    # @user_index = User.where(nickname: "犬３")
     # @users_index = User.all
     if (current_user[:sex] == 1)
       @users_index = User.where(sex: 0)
@@ -18,21 +17,9 @@ class UsersController < ApplicationController
 
   def show
     @users_show = User.find(params[:id])
-    # @relationship = Relationship.new
   end
 end
 
-  def following
-    @user  = User.find(params[:id])
-    @users = @user.followings
-    render 'show_follow'
-  end
-
-  def followers
-    @user  = User.find(params[:id])
-    @users = @user.followers
-    render 'show_follower'
-  end
 
 
 private
