@@ -10,8 +10,10 @@
     
     <div class='header__box__right'>
       <div class='header__box__right__myPage'>
-        <span><img src="/assets/arrow.png" alt="矢印の画像" class='arrow'></span>
-        <ul class="header__box__right__myPage__list">
+        <span>
+          <img src="/assets/arrow.png" alt="矢印の画像" class='arrow'>
+        </span>
+        <ul class='header__box__right__myPage__list'>
           <li><%= link_to 'マイページ', user_path(current_user[:id]), method: :get %></li>
           <li><%= link_to 'いいねされたユーザー', followedPage_user_path(current_user[:id]), method: :get %></li>
           <li><%= link_to 'いいねしたユーザー', followerPage_user_path(current_user[:id]), method: :get %></li>
