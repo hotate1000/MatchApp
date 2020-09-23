@@ -27,6 +27,10 @@ class UsersController < ApplicationController
     # @users_followerpage = User.all.where.not(id: current_user.id)
     @users_followedPage = User.find(params[:id])
   end
+
+  def followerFollowerPage
+    @users_followerFollowedPage = User.find(params[:id])
+  end
 end
   
 
