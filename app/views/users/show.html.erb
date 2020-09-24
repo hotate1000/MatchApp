@@ -33,3 +33,11 @@
 </div>
 
 <%= render partial: "footer" %>
+
+
+
+<%if current_user.followed?(@users_show)%>
+aaaa
+<%else%>
+bbbb
+<%end%>

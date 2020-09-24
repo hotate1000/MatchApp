@@ -2,11 +2,12 @@
 <%= render partial: "header" %>
 
 <div class='topTitle'>
-  いいねしたユーザー一覧
+  マッチングしたユーザー一覧
 </div>
 
 <div class='usersIndex'>
-  <% @users_followerPage.followed_user.where.not(id: current_user.id).each do |user| %>
+  <% @users_followerFollowedPage.followed_user.where.not(id: current_user.id).each do |user| %>
+    <%if current_user.followed?(user) && current_user.follower?(user)%>
      <div class='usersIndex__userbox'>
       <div class='usersIndex__userbox__img'>
         <%=link_to image_tag(user.image.url, class:'userImg'),user_path(user[:id]) %>
@@ -15,7 +16,9 @@
         <%=user.nickname%>
       </div>
     </div>
+    <%end%>
   <% end %>
 </div>
+
 
 <%= render partial: "footer" %>
