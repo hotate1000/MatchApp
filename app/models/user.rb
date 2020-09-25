@@ -24,6 +24,9 @@ class User < ApplicationRecord
   has_many :followed_user, through: :follower, source: :followed # 自分がフォローしている人
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
 
+  has_many :group_users
+  has_many :groups, through: :group_users
+  has_many :messages
  
   # ユーザーをフォローする
   def follow(user_id)
